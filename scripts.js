@@ -19,27 +19,25 @@
 //take data for budget and user input and display dollars spent for each category
 
 
-class ItemPurchase {
+class BudgetTracker {
     constructor(price, description = '') {
         this.price = price;
         this.description = description;
     }
 }
 
-let test2 = new ItemPurchase(25)
-let test = new ItemPurchase(50, "sup dud")
+let test2 = new BudgetTracker(25)
+let test = new BudgetTracker(50, "sup dud")
 
 console.log(test2)
 console.log(test)
 
 console.log('test')
 
-let user = document.getElementById('tst');s
+var items = [];
 
-function guardarNumeros(){
-    
-    var items = [];
-    boxvalue = document.getElementById('tst').value;
+function getTransaction(){
+    transactionValue = document.getElementById('moneySpent').value;
     items.push(userTest);  
     console.log(items);
    
