@@ -1,7 +1,9 @@
 //have a variable for budget and then have it displayed
 
 //researching progress bar, looks like the java will control how much width the bar will take up
-
+/**
+ * @src for progress bar https://www.w3schools.com/howto/howto_js_progressbar.asp
+ */
 //take user input for purchase, category drop down and option description and store them
 //purchase amount stored into an category arrays to be displayed
 //create a class for itemPurchase with constructors of price and description
@@ -26,8 +28,8 @@ class BudgetTracker {
     }
 }
 
-let test2 = new BudgetTracker(25)
-let test = new BudgetTracker(50, "sup dud")
+let test2 = new BudgetTracker()
+let test = new BudgetTracker()
 
 console.log(test2)
 console.log(test)
@@ -38,10 +40,10 @@ var items = [];
 
 function getTransaction(){
     transactionValue = document.getElementById('moneySpent').value;
-    items.push(userTest);  
+    items.push(transactionValue);  
     console.log(items);
    
 }
 
-let test = 0;
+//let test = 0;
 
