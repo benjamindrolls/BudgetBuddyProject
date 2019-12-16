@@ -1,4 +1,25 @@
+"use strict";
+
+class BudgetTracker {
+    constructor(price, description = '') {
+        this.price = price;
+        this.description = description;
+    }
+}
+
 //have a variable for budget and then have it displayed
+const totalBudget = 100;
+let totalSpent = 0;
+
+const category1Budget = 0.25 * totalBudget;
+const category2Budget = 0.25 * totalBudget;
+const category3Budget = 0.25 * totalBudget;
+const category4Budget = 0.25 * totalBudget;
+
+let category1Spent = 0;
+let category2Spent = 0;
+let category3Spent = 0;
+let category4Spent = 0;
 
 //researching progress bar, looks like the java will control how much width the bar will take up
 /**
@@ -8,6 +29,54 @@
 //purchase amount stored into an category arrays to be displayed
 //create a class for itemPurchase with constructors of price and description
 //setting price = price and description = ""
+
+const form = document.querySelector('.form');
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const price = Number(document.querySelector('#moneySpent').value);
+
+    if (price > 0) {
+        totalSpent +=  price;
+
+        const latestTransaction = new BudgetTracker(price);
+
+        const selectedCategory = document.querySelector('#categoryDropdown').value;
+        let priceDisplay;
+
+        switch (selectedCategory) {
+            case '1':
+                category1Spent += latestTransaction.price;
+
+                priceDisplay = document.querySelector('#dollarsCategory1');
+                priceDisplay.innerHTML = category1Spent;
+
+                break;
+            case '2':
+                category2Spent += latestTransaction.price;
+
+                priceDisplay = document.querySelector('#dollarsCategory2');
+                priceDisplay.innerHTML = category2Spent;
+
+                break;
+            case '3':
+                category3Spent += latestTransaction.price;
+
+                priceDisplay = document.querySelector('#dollarsCategory3');
+                priceDisplay.innerHTML = category3Spent;
+
+                break;
+            case '4':
+                category4Spent += latestTransaction.price;
+
+                priceDisplay = document.querySelector('#dollarsCategory4');
+                priceDisplay.innerHTML = category4Spent;
+
+                break;
+        }
+    }
+});
 
 //create arrays for all category's and use either a if statement or a switch case to determine what array info will be sorted
 
@@ -19,31 +88,3 @@
 //look into spread operator
 
 //take data for budget and user input and display dollars spent for each category
-
-
-class BudgetTracker {
-    constructor(price, description = '') {
-        this.price = price;
-        this.description = description;
-    }
-}
-
-let test2 = new BudgetTracker()
-let test = new BudgetTracker()
-
-console.log(test2)
-console.log(test)
-
-console.log('test')
-
-var items = [];
-
-function getTransaction(){
-    transactionValue = document.getElementById('moneySpent').value;
-    items.push(transactionValue);  
-    console.log(items);
-   
-}
-
-//let test = 0;
-
