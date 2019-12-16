@@ -50,28 +50,28 @@ form.addEventListener('submit', e => {
                 category1Spent += latestTransaction.price;
 
                 priceDisplay = document.querySelector('#dollarsCategory1');
-                priceDisplay.innerHTML = category1Spent;
+                priceDisplay.innerHTML = `$${category1Spent.toFixed(2)} / $${category1Budget.toFixed(2)}`;
 
                 break;
             case '2':
                 category2Spent += latestTransaction.price;
 
                 priceDisplay = document.querySelector('#dollarsCategory2');
-                priceDisplay.innerHTML = category2Spent;
+                priceDisplay.innerHTML = `$${category2Spent.toFixed(2)} / $${category2Budget.toFixed(2)}`;;
 
                 break;
             case '3':
                 category3Spent += latestTransaction.price;
 
                 priceDisplay = document.querySelector('#dollarsCategory3');
-                priceDisplay.innerHTML = category3Spent;
+                priceDisplay.innerHTML = `$${category3Spent.toFixed(2)} / $${category3Budget.toFixed(2)}`;;
 
                 break;
             case '4':
                 category4Spent += latestTransaction.price;
 
                 priceDisplay = document.querySelector('#dollarsCategory4');
-                priceDisplay.innerHTML = category4Spent;
+                priceDisplay.innerHTML = `$${category4Spent.toFixed(2)} / $${category4Budget.toFixed(2)}`;;
 
                 break;
         }
