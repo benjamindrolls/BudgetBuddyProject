@@ -12,9 +12,16 @@
 <body>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <form><label for="budgetEntry" id=budgetEntry></label>
-            <input type="number" class="userBudget" id="userBudget" placeholder="Weekly Budget"/>
-        </form>
+        <div><label for="budgetEntry" id=budgetEntry></label>
+            <!-- <input type="number" class="userBudget" id="userBudget" placeholder="Weekly Budget"/> -->
+            <!-- <button onclick="weeklyBudget()" class="submit">Submit</button> -->
+            <form>
+                    <form>
+                            <input type="text" placeholder="Weekly Budget" class= "userBudget" name="budget" id="userBudget">
+                          </form>
+                        
+                          <input type="submit" class = "submit" onclick="weeklyBudget();"><br/>
+        </div>
     </div>
     <div id="main">
     <header class="header">
@@ -26,7 +33,8 @@
         
         
     </header>
-    <div class="totalBudget">    
+    <div id="totalBudget">  
+         <p><span id='totalBudget'></span></p>  
     </div>   
     <div id="myProgress">
         <div id="myBar"></div>

@@ -1,8 +1,16 @@
 #myProgress {
-   width: 100%;
-   height: 50px;
-   background-color: grey; 
-}
+    width: 75%;
+    background-color: grey;
+    align-items: center;
+    margin: auto;
+  }
+  
+  #myBar {
+    width: 1%;
+    height: 20px;
+    background-color: green;
+    
+  }
 .totalBudget{
     width: 100%;
     height: 100px;
@@ -93,15 +101,15 @@ body {
     margin: auto;
   
   }
-  input[type=number] {
-    border: 4px solid #00A86B;
-    border-radius: 5px;  
-    width: 50%;
+  .userBudget {
+    border: 1px solid lightslategray;
+    width: 65%;
     align-items: center;
+    text-align: center;
 }
-input[type=text] {
+/* input[type=text] {
     border-color: #eeeeee;
-}
+} */
 select {
     width: 44%;
     padding: 5px 34px;
@@ -109,6 +117,15 @@ select {
     color: black;
     background-color: #eeeeee;
     text-align: center; 
+}
+form{
+    padding-top: 40px;
+}
+.submit{
+    background-color: #00a86b;
+    color: white;
+    border-radius: 6px;
+
 }
   @media screen and (max-width: 200px) {
     .header a {
