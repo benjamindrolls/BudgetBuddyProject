@@ -8,3 +8,9 @@
     height: 100px;
     background-color: lightblue;
 }
+.container {
+    display: flex;
+}
+.column1, .column2 {
+    flex: 1;
+}
