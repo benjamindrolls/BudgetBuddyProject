@@ -11,10 +11,14 @@ class BudgetTracker {
 const totalBudget = 100;
 let totalSpent = 0;
 
-const category1Budget = 0.25 * totalBudget;
-const category2Budget = 0.25 * totalBudget;
-const category3Budget = 0.25 * totalBudget;
-const category4Budget = 0.25 * totalBudget;
+//Entertainment
+const category1Budget = 0.1 * totalBudget;
+//Food
+const category2Budget = 0.3 * totalBudget;
+//Clothing
+const category3Budget = 0.1 * totalBudget;
+//Bills
+const category4Budget = 0.5 * totalBudget;
 
 let category1Spent = 0;
 let category2Spent = 0;
