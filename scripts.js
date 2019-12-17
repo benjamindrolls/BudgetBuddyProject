@@ -96,7 +96,7 @@ function openNav() {
     document.getElementById("main").style.marginRight = "0";
   }
   function weeklyBudget() {
-    document.getElementById('totalBudget').innerHTML = 
+    document.getElementById('budgetDisplay').innerHTML = 
                     document.getElementById("userBudget").value;
   }
   var i = 0;
