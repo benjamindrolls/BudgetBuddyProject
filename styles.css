@@ -11,12 +11,7 @@
     background-color: green;
     
   }
-.totalBudget{
-    width: 100%;
-    height: 100px;
 
-    background-color: lightblue;
-}
 .container {
     display: flex;
 }
