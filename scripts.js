@@ -11,10 +11,14 @@ class BudgetTracker {
 const totalBudget = 100;
 let totalSpent = 0;
 
-const category1Budget = 0.10 * totalBudget;
-const category2Budget = 0.30 * totalBudget;
-const category3Budget = 0.10 * totalBudget;
-const category4Budget = 0.50 * totalBudget;
+//Entertainment
+const category1Budget = 0.1 * totalBudget;
+//Food
+const category2Budget = 0.3 * totalBudget;
+//Clothing
+const category3Budget = 0.1 * totalBudget;
+//Bills
+const category4Budget = 0.5 * totalBudget;
 
 let category1Spent = 0;
 let category2Spent = 0;
@@ -39,6 +43,7 @@ form.addEventListener('submit', e => {
 
     if (price > 0) {
         totalSpent +=  price;
+        moneyLeft();
 
         const latestTransaction = new BudgetTracker(price);
 
@@ -91,9 +96,33 @@ function openNav() {
     document.getElementById("main").style.marginRight = "0";
   }
   function weeklyBudget() {
-        const userBudget = document.getElementById("userBudget").value;
-        document.getElementById('budgetDisplay').innerHTML = `$${userBudget}`;
-        return userBudget;
+    const userBudget = document.getElementById("userBudget").value;
+    document.getElementById('budgetDisplay').innerHTML = userBudget;
+    return userBudget;
+  }
+function moneyLeft() {
+  const remainingPercent = totalSpent / weeklyBudget() * 100;
+  console.log(remainingPercent);
+  document.getElementById("myBar").style.width = `${remainingPercent}%`;
+}
+
+  var i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+      }
+    }
+
   }
 
 
