@@ -42,6 +42,7 @@ form.addEventListener('submit', e => {
 
     if (price > 0) {
         totalSpent +=  price;
+        moneyLeft();
 
         const latestTransaction = new BudgetTracker(price);
 
@@ -99,9 +100,16 @@ function openNav() {
     document.getElementById("main").style.marginRight = "0";
   }
   function weeklyBudget() {
-    document.getElementById('budgetDisplay').innerHTML = 
-                    document.getElementById("userBudget").value;
+    const userBudget = document.getElementById("userBudget").value;
+    document.getElementById('budgetDisplay').innerHTML = userBudget;
+    return userBudget;
   }
+function moneyLeft() {
+  const remainingPercent = totalSpent / weeklyBudget() * 100;
+  console.log(remainingPercent);
+  document.getElementById("myBar").style.width = `${remainingPercent}%`;
+}
+
   var i = 0;
 function move() {
   if (i == 0) {
