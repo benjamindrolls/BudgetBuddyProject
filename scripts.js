@@ -97,7 +97,7 @@ function openNav() {
   }
   function weeklyBudget() {
     const userBudget = document.getElementById("userBudget").value;
-    document.getElementById('budgetDisplay').innerHTML = userBudget;
+    document.getElementById('budgetDisplay').innerHTML = `$${userBudget}`;
     return userBudget;
   }
 function moneyLeft() {
