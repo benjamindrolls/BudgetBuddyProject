@@ -106,26 +106,6 @@ function moneyLeft() {
   document.getElementById("myBar").style.width = `${remainingPercent}%`;
 }
 
-  var i = 0;
-function move() {
-  if (i == 0) {
-    i = 1;
-    var elem = document.getElementById("myBar");
-    var width = 1;
-    var id = setInterval(frame, 10);
-    function frame() {
-      if (width >= 100) {
-        clearInterval(id);
-        i = 0;
-      } else {
-        width++;
-        elem.style.width = width + "%";
-      }
-    }
-
-  }
-
-
 
 //create arrays for all category's and use either a if statement or a switch case to determine what array info will be sorted
 
