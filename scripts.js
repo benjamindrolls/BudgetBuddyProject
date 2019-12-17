@@ -43,6 +43,7 @@ form.addEventListener('submit', e => {
 
     if (price > 0) {
         totalSpent +=  price;
+        moneyLeft();
 
         const latestTransaction = new BudgetTracker(price);
 
@@ -61,7 +62,7 @@ form.addEventListener('submit', e => {
                 category2Spent += latestTransaction.price;
 
                 priceDisplay = document.querySelector('#dollarsCategory2');
-                priceDisplay.innerHTML = `$${category2Spent.toFixed(2)} / $${category2Budget.toFixed(2)}`;;
+                priceDisplay.innerHTML = `$${category2Spent.toFixed(2)} / $${category2Budget.toFixed(2)}`;
 
                 break;
             case '3':
@@ -69,14 +70,14 @@ form.addEventListener('submit', e => {
 
 
                 priceDisplay = document.querySelector('#dollarsCategory3');
-                priceDisplay.innerHTML = `$${category3Spent.toFixed(2)} / $${category3Budget.toFixed(2)}`;;
+                priceDisplay.innerHTML = `$${category3Spent.toFixed(2)} / $${category3Budget.toFixed(2)}`;
 
                 break;
             case '4':
                 category4Spent += latestTransaction.price;
 
                 priceDisplay = document.querySelector('#dollarsCategory4');
-                priceDisplay.innerHTML = `$${category4Spent.toFixed(2)} / $${category4Budget.toFixed(2)}`;;
+                priceDisplay.innerHTML = `$${category4Spent.toFixed(2)} / $${category4Budget.toFixed(2)}`;
 
                 break;
         }
@@ -100,9 +101,16 @@ function openNav() {
     document.getElementById("main").style.marginRight = "0";
   }
   function weeklyBudget() {
-    document.getElementById('budgetDisplay').innerHTML = 
-                    document.getElementById("userBudget").value;
+    const userBudget = document.getElementById("userBudget").value;
+    document.getElementById('budgetDisplay').innerHTML = userBudget;
+    return userBudget;
   }
+function moneyLeft() {
+  const remainingPercent = totalSpent / weeklyBudget() * 100;
+  console.log(remainingPercent);
+  document.getElementById("myBar").style.width = `${remainingPercent}%`;
+}
+
   var i = 0;
 function move() {
   if (i == 0) {
