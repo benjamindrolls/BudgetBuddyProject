@@ -84,11 +84,6 @@ form.addEventListener('submit', e => {
     }
 });
 
-function getTransaction(){
-    transactionValue = document.getElementById('moneySpent').value;
-    items.push(transactionValue);  
-    console.log(items);
-}
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function openNav() {
     document.getElementById("mySidenav").style.width = "150px";
@@ -127,8 +122,9 @@ function move() {
         elem.style.width = width + "%";
       }
     }
+
   }
-}
+
 
 
 //create arrays for all category's and use either a if statement or a switch case to determine what array info will be sorted
