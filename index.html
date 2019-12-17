@@ -10,49 +10,67 @@
     <title>Budget Buddy</title>
 </head>
 <body>
-    <header>
-        <li class="">Budget Buddy</li>
-        <div class="links">
-            <li><a href="#">Weekly</a></li>
-            <li><a href="#">Budget Category</a></li>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div><label for="budgetEntry" id=budgetEntry></label>
+            <!-- <input type="number" class="userBudget" id="userBudget" placeholder="Weekly Budget"/> -->
+            <!-- <button onclick="weeklyBudget()" class="submit">Submit</button> -->
+            <form>
+                    <form>
+                            <input type="text" placeholder="Weekly Budget" class= "userBudget" name="budget" id="userBudget">
+                          </form>
+                        
+                          <input type="submit" class = "submit" onclick="weeklyBudget();"><br/>
         </div>
+    </div>
+    <div id="main">
+    <header class="header">
+        <a href="#" class="logo"><img src="/BudgetBuddyProject/images/moola-logo.png" alt="Moola Logo" style="width:80px;height:40px;"></a>
+        <div class="links">
+            <!-- <span onclick="openNav()" class="categoryIcon"><img src="/BudgetBuddyProject/images/category-icon.png" alt="Category Icon" style="width:20px;height:20px;"></span> -->
+            <span onclick="openNav()" class="budgetIcon"><img src="/BudgetBuddyProject/images/money-icon.png" alt="Money Icon" style="width:20px;height:20px;"></a>
+        </div>
+        
+        
     </header>
-    <div class="totalBudget">    
+    <div id="totalBudget">  
+         <p><span id='totalBudget'></span></p>  
     </div>   
     <div id="myProgress">
         <div id="myBar"></div>
     </div>
     <form class="form">
-    <label for="moneySpent" id="title"></label>
-            <input type="text" class="moneySpent" id="moneySpent" placeholder="Transaction"/>
-            <!-- <label for="password">Password</p></label>
+        <label for="moneySpent" id="title"></label>
+        <input type="text" class="moneySpent" id="moneySpent" placeholder="Transaction"/>
+        <!-- <label for="password">Password</p></label>
             <input type="text" id="password" class="password" placeholder="Enter your password here"/></input> -->
-        
-            <select id = "categoryDropdown">
-                    <option value = "1">category one</option>
-                    <option value = "2">category two</option>
-                    <option value = "3">category three</option>
-                    <option value = "4">category four</option>
-                  </select>
-            <button class="submit">Submit</button>
-    </form>       
-    <div class="container">
-        <div class="column1">
-        <div class="category" id="categoryOne"></div>
-        <div class="category" id="categoryTwo"></div>
-        <div class="category" id="categoryThree"></div>
-        <div class="category" id="categoryFour"></div>
-    </div>
-    <div class="column2">
-            <div class="dollarsLeft" id="dollarsCategory1"></div>
-            <div class="dollarsLeft" id="dollarsCategory2"></div>
-            <div class="dollarsLeft" id="dollarsCategory3"></div>
-            <div class="dollarsLeft" id="dollarsCategory4"></div>
-
             
+            <select id = "categoryDropdown">
+                <option value = "1">category one</option>
+                <option value = "2">category two</option>
+                <option value = "3">category three</option>
+                <option value = "4">category four</option>
+            </select>
+            <button class="submit">Submit</button>
+        </form>       
+        <div class="container">
+            <div class="column1">
+                <div class="category" id="categoryOne"></div>
+                <div class="category" id="categoryTwo"></div>
+                <div class="category" id="categoryThree"></div>
+                <div class="category" id="categoryFour"></div>
+            </div>
+            <div class="column2">
+                <div class="dollarsLeft" id="dollarsCategory1"></div>
+                <div class="dollarsLeft" id="dollarsCategory2"></div>
+                <div class="dollarsLeft" id="dollarsCategory3"></div>
+                <div class="dollarsLeft" id="dollarsCategory4"></div>
+                
+                
+            </div>
+        </div>
+        
+        <script src="scripts.js"></script>
     </div>
-</div>
-
-<script src="scripts.js"></script>
-</body>
-</html>
+    </body>
+    </html>

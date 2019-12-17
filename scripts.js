@@ -42,7 +42,39 @@ function getTransaction(){
     transactionValue = document.getElementById('moneySpent').value;
     items.push(transactionValue);  
     console.log(items);
-   
+}
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "150px";
+    document.getElementById("main").style.marginRight = "150px";
+  }
+  
+  /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginRight = "0";
+  }
+  function weeklyBudget() {
+    document.getElementById('totalBudget').innerHTML = 
+                    document.getElementById("userBudget").value;
+  }
+  var i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+      }
+    }
+  }
 }
 
 //let test = 0;
