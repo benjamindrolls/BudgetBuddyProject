@@ -10,6 +10,7 @@ class BudgetTracker {
 //have a variable for budget and then have it displayed
 const totalBudget = 100;
 let totalSpent = 0;
+
 //Entertainment
 const category1Budget = 0.1 * totalBudget;
 //Food
