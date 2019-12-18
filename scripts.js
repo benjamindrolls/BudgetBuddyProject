@@ -10,6 +10,7 @@ class BudgetTracker {
 //have a variable for budget and then have it displayed
 const totalBudget = 100;
 let totalSpent = 0;
+
 //Entertainment
 const category1Budget = 0.1 * totalBudget;
 //Food
@@ -42,6 +43,7 @@ form.addEventListener('submit', e => {
 
     if (price > 0) {
         totalSpent +=  price;
+        moneyLeft();
 
         const latestTransaction = new BudgetTracker(price);
 
@@ -60,7 +62,7 @@ form.addEventListener('submit', e => {
                 category2Spent += latestTransaction.price;
 
                 priceDisplay = document.querySelector('#dollarsCategory2');
-                priceDisplay.innerHTML = `$${category2Spent.toFixed(2)} / $${category2Budget.toFixed(2)}`;;
+                priceDisplay.innerHTML = `$${category2Spent.toFixed(2)} / $${category2Budget.toFixed(2)}`;
 
                 break;
             case '3':
@@ -68,25 +70,20 @@ form.addEventListener('submit', e => {
 
 
                 priceDisplay = document.querySelector('#dollarsCategory3');
-                priceDisplay.innerHTML = `$${category3Spent.toFixed(2)} / $${category3Budget.toFixed(2)}`;;
+                priceDisplay.innerHTML = `$${category3Spent.toFixed(2)} / $${category3Budget.toFixed(2)}`;
 
                 break;
             case '4':
                 category4Spent += latestTransaction.price;
 
                 priceDisplay = document.querySelector('#dollarsCategory4');
-                priceDisplay.innerHTML = `$${category4Spent.toFixed(2)} / $${category4Budget.toFixed(2)}`;;
+                priceDisplay.innerHTML = `$${category4Spent.toFixed(2)} / $${category4Budget.toFixed(2)}`;
 
                 break;
         }
     }
 });
 
-function getTransaction(){
-    transactionValue = document.getElementById('moneySpent').value;
-    items.push(transactionValue);  
-    console.log(items);
-}
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function openNav() {
     document.getElementById("mySidenav").style.width = "150px";
@@ -99,26 +96,14 @@ function openNav() {
     document.getElementById("main").style.marginRight = "0";
   }
   function weeklyBudget() {
-    document.getElementById('budgetDisplay').innerHTML = 
-                    document.getElementById("userBudget").value;
+    const userBudget = document.getElementById("userBudget").value;
+    document.getElementById('budgetDisplay').innerHTML = `$${userBudget}`;
+    return userBudget;
   }
-  var i = 0;
-function move() {
-  if (i == 0) {
-    i = 1;
-    var elem = document.getElementById("myBar");
-    var width = 1;
-    var id = setInterval(frame, 10);
-    function frame() {
-      if (width >= 100) {
-        clearInterval(id);
-        i = 0;
-      } else {
-        width++;
-        elem.style.width = width + "%";
-      }
-    }
-  }
+function moneyLeft() {
+  const remainingPercent = totalSpent / weeklyBudget() * 100;
+  console.log(remainingPercent);
+  document.getElementById("myBar").style.width = `${remainingPercent}%`;
 }
 
 
