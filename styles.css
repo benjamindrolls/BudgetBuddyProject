@@ -24,10 +24,14 @@ h2{
   height: 20px;
   background-color: green; 
 }
-
+#moneySpent{
+  width: 30%;
+  text-align: center;
+}
 .container {
     display: flex;
     margin-top: 60px;
+    padding: 10px;
 }
 .column1 {
     flex: 1;
