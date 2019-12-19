@@ -14,13 +14,13 @@
         <div><label for="budgetEntry" id=budgetEntry></label>
             <!-- <input type="number" class="userBudget" id="userBudget" placeholder="Weekly Budget"/> -->
             <!-- <button onclick="weeklyBudget()" class="submit">Submit</button> -->
-                         <form class="inputContainer">
+                         <form class="inputContainer" onclick="return false">
                              <h2>Let's start saving.</h2>
                              <p>Please enter how much money you have to spend for the week.</p>
                             <input type="text" placeholder="Budget Amount" class= "userBudget" name="budget" id="userBudget">
                         
                         
-                          <input type="submit" class = "submit" onclick="weeklyBudget();"><br/>
+                          <input type="submit" class ="submit" onclick="weeklyBudget();"><br/>
                         </form>
         </div>
     </div>
@@ -43,7 +43,7 @@
     </div>
     <form class="form">
         <label for="moneySpent" id="title"></label>
-        <input type="text" class="moneySpent" id="moneySpent" placeholder="Transaction"/>
+        <input type="text" class="moneySpent" id="moneySpent" step=".01" placeholder="Transaction"/>
         <!-- <label for="password">Password</p></label>
             <input type="text" id="password" class="password" placeholder="Enter your password here"/></input> -->
             
