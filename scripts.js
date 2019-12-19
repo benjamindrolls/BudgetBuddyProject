@@ -48,6 +48,7 @@ form.addEventListener('submit', e => {
         const selectedCategory = Number(document.querySelector('#categoryDropdown').value) - 1;
         updateCategory(selectedCategory, latestTransaction.price);
     }
+    overBudget();
 });
 /* updates the amount spent in the proper category, then displays it on the page */
 function updateCategory(category, price = 0) {
@@ -75,4 +76,9 @@ function moneyLeft() {
     const remainingPercent = totalSpent / totalBudget * 100;
     console.log(remainingPercent);
     document.getElementById("myBar").style.width = `${remainingPercent}%`;
+}
+function overBudget(){
+    if (totalSpent >= totalBudget){
+        document.getElementById("alertCow").style.display = "contents";
+    }
 }

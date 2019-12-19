@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css" />
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
         <div><label for="budgetEntry" id=budgetEntry></label>
             <!-- <input type="number" class="userBudget" id="userBudget" placeholder="Weekly Budget"/> -->
             <!-- <button onclick="weeklyBudget()" class="submit">Submit</button> -->
-                         <form class="inputContainer">
+                         <form class="inputContainer" onclick="return false">
                              <h2>Let's start saving.</h2>
                              <p>Please enter how much money you have to spend for the week.</p>
                             <input type="text" placeholder="Budget Amount" class= "userBudget" name="budget" id="userBudget">
@@ -71,7 +71,12 @@
 
                 
         </div>
+        
     </div>
+    <div class="alert">
+            <span id="alertCow"><img  src="./images/Moola Cow.png" alt="Alert Cow" style="width:300px;height:300px;">
+            </span>
+            </div>
 
 <script src="scripts.js"></script>
 </body>
