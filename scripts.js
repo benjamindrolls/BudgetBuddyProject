@@ -9,18 +9,28 @@ class BudgetTracker {
 
 //have a variable for budget and then have it displayed
 let totalSpent = 0;
-const totalBudget = 100;
+// const totalBudget = 100;
 
 let category1Spent = 0;
 let category2Spent = 0;
 let category3Spent = 0;
 let category4Spent = 0;
 
-
 function weeklyIncome() {
     let userBudget = document.getElementById("userBudget").value;
     document.getElementById('budgetDisplay').innerHTML = `$${userBudget}`;
+    return userBudget;
 } 
+
+//Entertainment
+const category1Budget = 0.1 * userBudget;
+//Food
+const category2Budget = 0.3 * userBudget;
+//Clothing
+const category3Budget = 0.1 * userBudget;
+//Bills
+const category4Budget = 0.5 * userBudget;
+
 
 //researching progress bar, looks like the java will control how much width the bar will take up
 /**
@@ -35,16 +45,6 @@ const form = document.querySelector('.form');
 
 form.addEventListener('submit', e => {
     e.preventDefault();
-
- 
-    //Entertainment
-    const category1Budget = 0.1 * totalBudget;
-    //Food
-    const category2Budget = 0.3 * totalBudget;
-    //Clothing
-    const category3Budget = 0.1 * totalBudget;
-    //Bills
-    const category4Budget = 0.5 * totalBudget;
 
     const price = Number(document.querySelector('#moneySpent').value);
 
