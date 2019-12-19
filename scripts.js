@@ -77,11 +77,16 @@ function moneyLeft() {
     console.log(remainingPercent);
     document.getElementById("myBar").style.width = `${remainingPercent}%`;
 }
+
+let moo = new Audio("./sounds/Cow.mp3")
+let heard = new Audio("./sounds/SmallHerd.mp3")
 function overBudget(){
     if (totalSpent == totalBudget){
         document.getElementById("cashCow").style.display = "contents";
+        moo.play();
 }else if (totalSpent > totalBudget){
         document.getElementById("alertCow").style.display = "contents";
         document.getElementById("cashCow").style.display = "none";
+        heard.play();
     }
 }
