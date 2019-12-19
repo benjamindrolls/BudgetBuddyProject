@@ -19,12 +19,11 @@ h2{
     margin: auto;
   }
   
-  #myBar {
-    width: 1%;
-    height: 20px;
-    background-color: green;
-    
-  }
+#myBar {
+  width: 1%;
+  height: 20px;
+  background-color: green; 
+}
 
 .container {
     display: flex;
@@ -33,10 +32,10 @@ h2{
 .column1 {
     flex: 1;
 }
-.column2 {
+/* .column2 {
 
 
-}
+} */
 
 #budgetContainer{
     width: 100%;
@@ -81,10 +80,10 @@ body {
     color: black;
   }
   
-  .header a.active {
+  /* .header a.active {
     /* background-color: dodgerblue;
-    color: white; */
-  }
+    color: white; 
+  } */
   
   .links {
     float: right;

@@ -34,6 +34,12 @@ function weeklyBudget() {
         updateCategory(i);                  // update each category line on the page
     }
 }
+
+function decreaseTotal() {
+   const newtotal =  totalBudget - totalSpent;
+   document.getElementById('budgetDisplay').innerHTML = `$${newtotal}`;
+} 
+
 const form = document.querySelector('.form');   // this is the "Enter a transaction" form
 /* When the user clicks Submit, process the transaction */
 form.addEventListener('submit', e => {
@@ -43,6 +49,7 @@ form.addEventListener('submit', e => {
         // TODO: Make sure this transaction doesn't go over total budget
         totalSpent +=  price;   // update total budget
         moneyLeft();            // update progress bar
+        decreaseTotal();        // decreases transactions from total on top center of page
         const latestTransaction = new ItemPurchase(price);
         // find correct array index for categoryBudget/categorySpent based on dropdown box
         const selectedCategory = Number(document.querySelector('#categoryDropdown').value) - 1;
@@ -50,6 +57,9 @@ form.addEventListener('submit', e => {
     }
     overBudget();
 });
+
+
+
 /* updates the amount spent in the proper category, then displays it on the page */
 function updateCategory(category, price = 0) {
     categorySpent[category] += price;
@@ -71,12 +81,17 @@ function updateCategory(category, price = 0) {
     // update the HTML line, using toFixed(2) to put it in money format
     priceDisplay.innerHTML = `$${categorySpent[category].toFixed(2)} / $${categoryBudget[category].toFixed(2)}`;
 }
+
+
 /* Calculates what percentage of total budget has been spent and updates the progress bar */
 function moneyLeft() {
     const remainingPercent = totalSpent / totalBudget * 100;
-    console.log(remainingPercent);
     document.getElementById("myBar").style.width = `${remainingPercent}%`;
-}
+    if (totalBudget < totalSpent) {
+        document.getElementById("myBar").style.width = '100%';
+    }
+} 
+
 
 let moo = new Audio("./sounds/Cow.mp3")
 let heard = new Audio("./sounds/SmallHerd.mp3")
@@ -90,3 +105,4 @@ function overBudget(){
         heard.play();
     }
 }
+
