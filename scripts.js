@@ -49,7 +49,7 @@ form.addEventListener('submit', e => {
         // TODO: Make sure this transaction doesn't go over total budget
         totalSpent +=  price;   // update total budget
         moneyLeft();            // update progress bar
-        decreaseTotal();        // sgsdfgsd
+        decreaseTotal();        // decreases transactions from total on top center of page
         const latestTransaction = new ItemPurchase(price);
         // find correct array index for categoryBudget/categorySpent based on dropdown box
         const selectedCategory = Number(document.querySelector('#categoryDropdown').value) - 1;
