@@ -57,6 +57,8 @@ form.addEventListener('submit', e => {
     }
 });
 
+
+
 /* updates the amount spent in the proper category, then displays it on the page */
 function updateCategory(category, price = 0) {
     categorySpent[category] += price;
@@ -83,6 +85,8 @@ function updateCategory(category, price = 0) {
 /* Calculates what percentage of total budget has been spent and updates the progress bar */
 function moneyLeft() {
     const remainingPercent = totalSpent / totalBudget * 100;
-    console.log(remainingPercent);
     document.getElementById("myBar").style.width = `${remainingPercent}%`;
-}
+    if (totalBudget < totalSpent) {
+        document.getElementById("myBar").style.width = '100%';
+    }
+} 
