@@ -125,6 +125,7 @@ body {
   #main {
     transition: margin-right .5s;
     margin: auto;
+    font-family: 'Nunito', sans-serif;
   
   }
   .inputContainer{
