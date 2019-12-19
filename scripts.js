@@ -8,8 +8,10 @@ class ItemPurchase {
 }
 let totalBudget = 0;
 let totalSpent = 0;
+
 let categoryBudget = [0, 0, 0, 0];
 let categorySpent = [0, 0, 0, 0];
+
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function openNav() {
     document.getElementById("mySidenav").style.width = "150px";
