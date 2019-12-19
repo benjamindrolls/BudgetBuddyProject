@@ -78,7 +78,10 @@ function moneyLeft() {
     document.getElementById("myBar").style.width = `${remainingPercent}%`;
 }
 function overBudget(){
-    if (totalSpent >= totalBudget){
+    if (totalSpent == totalBudget){
+        document.getElementById("cashCow").style.display = "contents";
+}else if (totalSpent > totalBudget){
         document.getElementById("alertCow").style.display = "contents";
+        document.getElementById("cashCow").style.display = "none";
     }
 }

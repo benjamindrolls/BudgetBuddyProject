@@ -176,9 +176,7 @@ select {
 
 }
 .alert{
-/* display: flex;
-align-items: flex-end;
-justify-content: flex-end; */
+
 position: fixed;
     bottom: 0;
     right: 0;
@@ -186,6 +184,9 @@ position: fixed;
 }
 #alertCow{
   display: none;
+}
+#cashCow{
+  display:none;
 }
 
   @media screen and (max-width: 200px) {
