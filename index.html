@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <title>Budget Buddy</title>
 </head>
-<body>
+<body onload="getModal()">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div><label for="budgetEntry" id=budgetEntry></label>
@@ -43,7 +43,7 @@
     </div>
     <form class="form">
         <label for="moneySpent" id="title"></label>
-        <input type="text" class="moneySpent" id="moneySpent" step=".01" placeholder="Transaction"/>
+        <input type="text" onclick="enterBudget()" class="moneySpent" id="moneySpent" step=".01" placeholder="Transaction"/>
         <!-- <label for="password">Password</p></label>
             <input type="text" id="password" class="password" placeholder="Enter your password here"/></input> -->
             
@@ -80,6 +80,24 @@
             </span>
             </div>
 </div>
+<div id="welcome" class="welcome-message">
+
+    <div class="welcome-content">
+      <div class="welcome-header">
+        <span class="close">&times;</span>
+        <h1>Moola!</h1>
+      </div>
+      <div class="message-body">
+        <h2>Welcome To Moola</h2>
+        <p>Moola's goal is to help YOU save your hard earned cash.</p>
+        <p>We strive for an easy to use but effect app that helps you track transactions,</p>
+        <p>and visualize the money you spend on a weekly basis.</p>
+        <p>start now by entering your weekly budget!</p>
+      </div>
+    </div>
+  
+  </div>
+
 <script src="scripts.js"></script>
 </body>
 </html>
