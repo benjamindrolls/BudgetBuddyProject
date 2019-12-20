@@ -6,7 +6,7 @@ class ItemPurchase {
         // this.description = description;
     } 
 }
-let totalBudget = 0;
+let totalBudget;
 let totalSpent = 0;
 // const totalBudget = 100;
 
@@ -42,9 +42,8 @@ function weeklyBudget() {
         0.3 * totalBudget,                  // Food
         0.1 * totalBudget,                  // Clothing
         0.5 * totalBudget];                 // Bills
-    for (let i = 0; i < categoryBudget.length; i++) {
+    } for (let i = 0; i < categoryBudget.length; i++) {
         updateCategory(i);                  // update each category line on the page
-    }
 }
 
 function decreaseTotal() {
