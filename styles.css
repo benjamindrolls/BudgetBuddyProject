@@ -148,10 +148,13 @@ body {
     
   }
   .userBudget {
-    border: 1px solid lightslategray;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
     width: 90%;
+    height: 25px;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 14px;
+    font-size: 14px;
 }
 input.submit{
   width: 90%;
