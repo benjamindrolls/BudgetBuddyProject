@@ -157,3 +157,26 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+////////////////////////////////////////////////////////
+// Get the modal
+let purchaseModal = document.getElementById("transactionList");
+
+let btn = document.getElementById("myBtn");
+// Get the <span> element that closes the modal
+let spanPan = document.getElementsByClassName("close")[1];
+
+btn.onclick = function() {
+  purchaseModal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+spanPan.onclick = function() {
+  purchaseModal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == purchaseModal) {
+    purchaseModal.style.display = "none";
+  }
+}

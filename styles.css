@@ -184,7 +184,7 @@ position: fixed;
 }
 
 
-.welcome-message {
+.welcome-message, .transactions {
     display: none; 
     position: fixed; 
     z-index: 1; 
@@ -199,7 +199,7 @@ position: fixed;
   }
   
   
-  .welcome-content {
+  .welcome-content, .transaction-content {
     position: relative;
     background-color: #fefefe;
     margin: auto;
@@ -239,13 +239,13 @@ position: fixed;
     cursor: pointer;
   }
   
-  .welcome-header {
+  .welcome-header, .transactions-header {
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
   }
   
-  .message-body {
+  .message-body, .displayTransactions {
     padding: 2px 16px;
 }
 
