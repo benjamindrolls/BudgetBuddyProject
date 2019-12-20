@@ -1,3 +1,17 @@
+p {
+  
+  font-size: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: 'Nunito', sans-serif;
+
+}
+h2{
+  margin: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: 'Nunito', sans-serif;
+}
 #myProgress {
     width: 75%;
     background-color: grey;
@@ -5,23 +19,31 @@
     margin: auto;
   }
   
-  #myBar {
-    width: 1%;
-    height: 20px;
-    background-color: green;
-    
-  }
+#myBar {
+  width: 1%;
+  height: 20px;
+  background-color: green; 
+}
 
 .container {
     display: flex;
+    margin-top: 60px;
 }
-.column1, .column2 {
+.column1 {
     flex: 1;
 }
+/* .column2 {
 
+<<<<<<< HEAD
 #budgetContainer {
+=======
+
+} */
+
+#budgetContainer{
+>>>>>>> ad3f62f775fc962b5516a14eb5e4c9feb09e420b
     width: 100%;
-    height: 100px;
+    height: 50px;
     background-color: white;
     border-color: #00A86B;
     border: 5px;
@@ -35,6 +57,7 @@
 body { 
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
   }
   
   .header {
@@ -43,7 +66,7 @@ body {
     padding-top: 4px;
     padding-right: 10px;
     padding-bottom: 4px;
-    padding-left: 10px;
+    padding-left: 12px;
     height: 40px;
     text-decoration: none;
     font-size: 10px; 
@@ -61,10 +84,17 @@ body {
     color: black;
   }
   
+<<<<<<< HEAD
   .header a.active {
     background-color: dodgerblue;
     color: white;
   }
+=======
+  /* .header a.active {
+    /* background-color: dodgerblue;
+    color: white; 
+  } */
+>>>>>>> ad3f62f775fc962b5516a14eb5e4c9feb09e420b
   
   .links {
     float: right;
@@ -111,17 +141,26 @@ body {
   #main {
     transition: margin-right .5s;
     margin: auto;
+    font-family: 'Nunito', sans-serif;
   
+  }
+  .inputContainer{
+    align-items: center;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    
   }
   .userBudget {
     border: 1px solid lightslategray;
-    width: 65%;
-    align-items: center;
+    width: 90%;
     text-align: center;
+    margin-bottom: 15px;
 }
-/* input[type=text] {
-    border-color: #eeeeee;
-} */
+input.submit{
+  width: 90%;
+}
+
 select {
     width: 44%;
     padding: 5px 34px;
@@ -130,15 +169,36 @@ select {
     background-color: #eeeeee;
     text-align: center; 
 }
-form{
+
+.form{
     padding-top: 40px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
+
 .submit{
     background-color: #00a86b;
     color: white;
     border-radius: 6px;
+    border: none;
 
 }
+.alert{
+
+position: fixed;
+    bottom: 0;
+    right: 0;
+
+}
+#alertCow{
+  display: none;
+}
+#cashCow{
+  display:none;
+}
+
   @media screen and (max-width: 200px) {
     .header a {
       float: none;

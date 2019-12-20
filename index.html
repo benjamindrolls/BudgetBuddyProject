@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <title>Budget Buddy</title>
 </head>
 <body>
@@ -15,20 +14,39 @@
         <div><label for="budgetEntry" id=budgetEntry></label>
             <!-- <input type="number" class="userBudget" id="userBudget" placeholder="Weekly Budget"/> -->
             <!-- <button onclick="weeklyBudget()" class="submit">Submit</button> -->
+<<<<<<< HEAD
             <form> 
                     <form>
                             <input type="text" placeholder="Weekly Income" class= "userBudget" name="budget" id="userBudget">
                           </form>
                         
                           <input type="submit" class ="submit" onclick="weeklyIncome();"><br/>
+=======
+                         <form class="inputContainer" onclick="return false">
+                             <h2>Let's start saving.</h2>
+                             <p>Please enter how much money you have to spend for the week.</p>
+                            <input type="text" placeholder="Budget Amount" class= "userBudget" name="budget" id="userBudget">
+                        
+                        
+                          <input type="submit" class ="submit" onclick="weeklyBudget();"><br/>
+                        </form>
+>>>>>>> ad3f62f775fc962b5516a14eb5e4c9feb09e420b
         </div>
     </div>
     <div id="main">
     <header class="header">
+<<<<<<< HEAD
         <a href="#" class="logo"><img src="./images/moola-logo.png" alt="Moola Logo" style="width:80px;height:40px;"></a>
         <div class="links">
             <!-- <span onclick="openNav()" class="categoryIcon"><img src="/BudgetBuddyProject/images/category-icon.png" alt="Category Icon" style="width:20px;height:20px;"></span> -->
             <span onclick="openNav()" class="budgetIcon"><img src="./images/money-icon.png" alt="Money Icon" style="width:20px;height:20px;"></a>
+=======
+        <a href="#" class="logo"><img src="./images/moola-logo 9.40.34 PM.png" alt="Moola Logo" style="width:80px;height:40px;"></a>
+        <div class="links">
+            <!-- <span onclick="openNav()" class="categoryIcon"><img src="/BudgetBuddyProject/images/category-icon.png" alt="Category Icon" style="width:20px;height:20px;"></span> -->
+            <span onclick="openNav()" class="budgetIcon"><img src="./images/plus-sign.png" alt="Money Icon" style="width:20px;height:20px;"></a>
+
+>>>>>>> ad3f62f775fc962b5516a14eb5e4c9feb09e420b
         </div>
         
         
@@ -41,7 +59,11 @@
     </div>
     <form class="form">
         <label for="moneySpent" id="title"></label>
+<<<<<<< HEAD
         <input type="text" class="moneySpent" id="moneySpent" step=".01" placeholder="Transaction Amount($)"/>
+=======
+        <input type="text" class="moneySpent" id="moneySpent" step=".01" placeholder="Transaction"/>
+>>>>>>> ad3f62f775fc962b5516a14eb5e4c9feb09e420b
         <!-- <label for="password">Password</p></label>
             <input type="text" id="password" class="password" placeholder="Enter your password here"/></input> -->
             
@@ -69,8 +91,15 @@
 
                 
         </div>
+        
     </div>
-
+    <div class="alert">
+            <span id="alertCow"><img  src="./images/Moola Cow.png" alt="Alert Cow" style="width:300px;height:300px;">
+            </span>
+            <span id="cashCow"><img  src="./images/CashCowAlert.png" alt="Cash Cow Alert" style="width:300px;height:300px;">
+            </span>
+            </div>
+</div>
 <script src="scripts.js"></script>
 </body>
 </html>
