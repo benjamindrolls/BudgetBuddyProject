@@ -42,7 +42,7 @@ function weeklyBudget() {
     }
 }
 
-/* Updates */
+/* Updates the total amount available to spend on the webpage */
 function decreaseTotal() {
    const newtotal =  totalBudget - totalSpent;
    document.getElementById('budgetDisplay').innerHTML = `$${newtotal}`;
@@ -65,7 +65,7 @@ form.addEventListener('submit', e => {
         const categoryName = selectedCategory.options[selectedCategory.selectedIndex].text;
         
         const latestTransaction = new ItemPurchase(price, categoryName);
-        transactionHistory.unshift(latestTransaction);
+        transactionHistory.unshift(latestTransaction);      // add latest transaction to the start of array
         console.log(transactionHistory);
 
         // find correct array index for categoryBudget/categorySpent based on dropdown box
