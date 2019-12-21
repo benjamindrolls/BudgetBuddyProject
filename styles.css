@@ -1,18 +1,28 @@
 p {
-  font-size: 12px;
+  font-size: 16px;
   padding-left: 10px;
   padding-right: 10px;
   font-family: 'Nunito', sans-serif;
 }
+
 .appPurpose{
-  align-items: center;
+  display: flex;
+  justify-content: center;
 }
+
+.remainingBudget {
+  margin-bottom: 50px;
+  margin-top: 10px;
+}
+
 h2{
   margin: auto;
   padding-left: 10px;
   padding-right: 10px;
   font-family: 'Nunito', sans-serif;
 }
+
+
 #myProgress {
     width: 75%;
     background-color: grey;
@@ -32,7 +42,7 @@ h2{
   text-align: center;
   border: 2px solid lightgrey;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 16px;
   margin: 10px;
 }
   
@@ -46,6 +56,17 @@ h2{
     flex: 1;
 }
 
+#myBtn {
+  background-color: #00a86b;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  height: 32px;
+  width: 18%;
+  margin-top: 10px;
+  font-size: 16px;
+  margin-left: 10px;
+}
 
 #categoryDropdown{
   width: 42%;
@@ -66,9 +87,13 @@ h2{
     border: 5px;
     text-align: center;
 }
+
 #budgetDisplay {
-    font-size: 200%;
+    font-size: 300%;
+    display: flex;
+    justify-content: center;
 }
+
 body { 
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -194,8 +219,6 @@ select {
   border: none;
   height: 32px;
   width: 92%;
-
-  /* width: 70%; */
   margin-top: 10px;
   font-size: 16px;
 }
@@ -280,7 +303,15 @@ position: fixed;
     padding: 2px 16px;
 }
 
-
+@media screen and (max-width: 768px) {
+  
+  #myBtn {
+    width: 92%;
+    margin: 10px;
+  }
+  
+}
+  
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 /* @media screen and (max-height: 450px) {
