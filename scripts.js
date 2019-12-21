@@ -4,23 +4,15 @@
 class ItemPurchase {
     constructor(price, category, description = '') {    // if a description isn't provided, default to an empty string
         this.price = price;
-        // this.description = description;
-    } 
+        this.category = category;
+        this.description = description;
+    }
 }
-let totalBudget;
+
+let transactionHistory = [];
+
+let totalBudget = 0;
 let totalSpent = 0;
-// const totalBudget = 100;
-
-let category1Spent = 0;
-let category2Spent = 0;
-let category3Spent = 0;
-let category4Spent = 0;
-
-function weeklyIncome() {
-    let userBudget = document.getElementById("userBudget").value;
-    document.getElementById('budgetDisplay').innerHTML = `$${userBudget}`;
-    return userBudget;
-} 
 
 let categoryBudget = [0, 0, 0, 0];
 let categorySpent = [0, 0, 0, 0];
@@ -45,8 +37,10 @@ function weeklyBudget() {
         0.3 * totalBudget,                  // Food
         0.1 * totalBudget,                  // Clothing
         0.5 * totalBudget];                 // Bills
-    } for (let i = 0; i < categoryBudget.length; i++) {
+    for (let i = 0; i < categoryBudget.length; i++) {
         updateCategory(i);                  // update each category line on the page
+    }
+    document.getElementById("moneySpent").disabled = false;
 }
 
 /* Updates the total amount available to spend on the webpage */
