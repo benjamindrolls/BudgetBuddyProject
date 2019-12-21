@@ -9,10 +9,26 @@ p {
 }
 h2{
   margin: auto;
-  padding-left: 10px;
+  padding-left: 0px;
   padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: left;
   font-family: 'Nunito', sans-serif;
 }
+.welcome-copy{
+  font-size: 14px;
+}
+.gettingStartedContainer{
+  text-align: center;
+  padding-bottom: 15px;
+ }
+.gettingStartedGraphic{
+  box-shadow: 5px 5px lightgrey;
+
+}
+
+
 #myProgress {
     width: 75%;
     background-color: grey;
@@ -272,7 +288,7 @@ position: fixed;
   
   .welcome-header, .transactions-header {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: #00A86B;
     color: white;
   }
   
