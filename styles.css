@@ -206,7 +206,7 @@ select {
   justify-content: center;
 
 }
-.submit{
+.submit {
   background-color: #00a86b;
   color: white;
   border-radius: 6px;
@@ -299,6 +299,17 @@ position: fixed;
     padding: 2px 16px;
 }
 
+#myBtn {
+  background-color: #00a86b;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  height: 32px;
+  width: 40%;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 13px;
+}
 
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
