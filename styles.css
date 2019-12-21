@@ -5,7 +5,10 @@ p {
   font-family: 'Nunito', sans-serif;
 }
 .appPurpose{
-  align-items: center;
+text-align: center;
+}
+.remainingBudget{
+  font-size: 18px;
 }
 h2{
   margin: auto;
