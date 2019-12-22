@@ -231,14 +231,17 @@ select {
 }
 
 .alert {
-
-position: fixed;
-    bottom: 0;
-    right: 0;
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
+
 #alertCow{
   display: none;
+  width: 220px;
+  height: 200px;
 }
+
 #cashCow{
   display:none;
 }
