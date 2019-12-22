@@ -9,6 +9,7 @@ text-align: center;
 }
 .remainingBudget{
   font-size: 18px;
+  margin: 5px;
 }
 h2{
   margin: auto;
@@ -34,14 +35,16 @@ h2{
 
 #myProgress {
     width: 75%;
-    background-color: grey;
+    background-color: white;
     align-items: center;
     margin: auto;
+    border-radius: 4px;
   }
 #myBar {
   width: 1%;
   height: 20px;
-  background-color: green; 
+  background-image: linear-gradient(-90deg, red, orange, yellow);
+  border-radius: 4px;
 }
 
 
@@ -58,7 +61,7 @@ h2{
 
 .container {
     display: flex;
-    margin-top: 60px;
+    margin-top: 35px;
     padding: 10px;
 }
 .column1 {
@@ -198,7 +201,7 @@ select {
     text-align: center; 
 }
 .form{
-  padding-top: 62px;
+  padding-top: 30px;
   margin-bottom: 30px;
   height: 82px;
   display: flex;
@@ -308,7 +311,7 @@ position: fixed;
   width: 40%;
   margin-top: 10px;
   margin-left: 10px;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 
