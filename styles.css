@@ -6,21 +6,11 @@ p {
 }
 
 .appPurpose{
-<<<<<<< HEAD
-  display: flex;
-  justify-content: center;
-}
-
-.remainingBudget {
-  margin-bottom: 50px;
-  margin-top: 10px;
-=======
 text-align: center;
 }
 .remainingBudget{
   font-size: 18px;
   margin: 5px;
->>>>>>> popupStyling
 }
 
 h2{
@@ -32,8 +22,6 @@ h2{
   text-align: left;
   font-family: 'Nunito', sans-serif;
 }
-<<<<<<< HEAD
-=======
 .welcome-copy{
   font-size: 14px;
 }
@@ -45,7 +33,6 @@ h2{
   box-shadow: 5px 5px lightgrey;
 
 }
->>>>>>> popupStyling
 
 
 #myProgress {
@@ -330,17 +317,6 @@ position: fixed;
     padding: 2px 16px;
 }
 
-<<<<<<< HEAD
-@media screen and (max-width: 768px) {
-  
-  #myBtn {
-    width: 92%;
-    margin: 10px;
-  }
-  
-}
-  
-=======
 #myBtn {
   background-color: #00a86b;
   color: white;
@@ -353,7 +329,6 @@ position: fixed;
   font-size: 14px;
 }
 
->>>>>>> popupStyling
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 /* @media screen and (max-height: 450px) {
