@@ -61,7 +61,7 @@ h2{
 }
   
 
-.container {
+.container, .displayTransactions {
     display: flex;
     margin-top: 35px;
     padding: 10px;
@@ -329,11 +329,15 @@ position: fixed;
     padding: 2px 16px;
 }
 
-#myBtn {
-  margin-left: 20px;
-  margin-top: 20px;
+.recent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+#myBtn {
+  margin-top: 20px;
+}
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 /* @media screen and (max-height: 450px) {

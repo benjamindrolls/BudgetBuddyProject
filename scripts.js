@@ -122,6 +122,9 @@ function overBudget(){
         document.getElementById("alertCow").style.display = "contents";
         document.getElementById("cashCow").style.display = "none";
         heard.play();
+    } else {
+        document.getElementById("alertCow").style.display = "none";
+        document.getElementById("cashCow").style.display = "none";
     }
 }
 //disables transaction text box so the user has to enter weekly income first
