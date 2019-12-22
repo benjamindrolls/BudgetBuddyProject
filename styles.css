@@ -37,7 +37,7 @@ h2{
 
 #myProgress {
     width: 75%;
-    background-color: white;
+    background-color: lightgray;
     align-items: center;
     margin: auto;
     border-radius: 4px;
@@ -61,12 +61,15 @@ h2{
 }
   
 
-.container, .displayTransactions {
+.container {
     display: flex;
     margin-top: 35px;
     padding: 10px;
 }
-.column1 {
+#displayTransactions {
+    display: flex;
+}
+.column1, #transaction-category {
     flex: 1;
 }
 

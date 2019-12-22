@@ -59,7 +59,7 @@ form.addEventListener('submit', e => {
 
     if (price > 0) {
         totalSpent +=  price;   // update total budget
-        moneyLeft();            // update progress bar
+        updateProgressBar();    // update progress bar
         decreaseTotal();        // decreases transactions from total on top center of page
         overBudget();           // display cow if at or over total budget
 
@@ -72,6 +72,8 @@ form.addEventListener('submit', e => {
         // find correct array index for categoryBudget/categorySpent based on dropdown box
         const selectedIndex = selectedCategory.selectedIndex;
         updateCategory(selectedIndex, latestTransaction.price);
+
+        updateHistory();        // update transaction history box
     }
 });
 
@@ -100,8 +102,21 @@ function updateCategory(category, price = 0) {
     priceDisplay.innerHTML = `$${categorySpent[category].toFixed(2)} / $${categoryBudget[category].toFixed(2)}`;
 }
 
+/* Updates the content of the "Your Recent Transactions" modal box */
+function updateHistory() {
+    const categoryHTML = document.createElement('p');
+    categoryHTML.innerText = transactionHistory[0].category;
+    let column = document.querySelector('#transaction-category');
+    column.insertBefore(categoryHTML, column.firstChild);
+
+    const priceHTML = document.createElement('p');
+    priceHTML.innerText = `$${transactionHistory[0].price.toFixed(2)}`;
+    column = document.querySelector('#transaction-price');
+    column.insertBefore(priceHTML, column.firstChild);
+}
+
 /* Calculates what percentage of total budget has been spent and updates the progress bar */
-function moneyLeft() {
+function updateProgressBar() {
     const remainingPercent = totalSpent / totalBudget * 100;
     document.getElementById("myBar").style.width = `${remainingPercent}%`;
     if (totalBudget < totalSpent) {
