@@ -130,7 +130,7 @@ function enterBudget() {
     if (totalBudget > 0) {
         return true;
     } else {
-        alert("enter a weekly budget before continuing.")
+        alert("Please enter a weekly budget before continuing.")
         document.getElementById("moneySpent").disabled = true;
     }
 }

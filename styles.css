@@ -6,6 +6,7 @@ p {
 }
 
 .appPurpose{
+<<<<<<< HEAD
   display: flex;
   justify-content: center;
 }
@@ -13,26 +14,52 @@ p {
 .remainingBudget {
   margin-bottom: 50px;
   margin-top: 10px;
+=======
+text-align: center;
+}
+.remainingBudget{
+  font-size: 18px;
+  margin: 5px;
+>>>>>>> popupStyling
 }
 
 h2{
   margin: auto;
-  padding-left: 10px;
+  padding-left: 0px;
   padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: left;
   font-family: 'Nunito', sans-serif;
 }
+<<<<<<< HEAD
+=======
+.welcome-copy{
+  font-size: 14px;
+}
+.gettingStartedContainer{
+  text-align: center;
+  padding-bottom: 15px;
+ }
+.gettingStartedGraphic{
+  box-shadow: 5px 5px lightgrey;
+
+}
+>>>>>>> popupStyling
 
 
 #myProgress {
     width: 75%;
-    background-color: grey;
+    background-color: white;
     align-items: center;
     margin: auto;
+    border-radius: 4px;
   }
 #myBar {
   width: 1%;
   height: 20px;
-  background-color: green; 
+  background-image: linear-gradient(-90deg, red, orange, yellow);
+  border-radius: 4px;
 }
 
 
@@ -49,7 +76,7 @@ h2{
 
 .container {
     display: flex;
-    margin-top: 60px;
+    margin-top: 35px;
     padding: 10px;
 }
 .column1 {
@@ -204,7 +231,7 @@ select {
     text-align: center; 
 }
 .form{
-  padding-top: 62px;
+  padding-top: 30px;
   margin-bottom: 30px;
   height: 82px;
   display: flex;
@@ -212,7 +239,7 @@ select {
   justify-content: center;
 
 }
-.submit{
+.submit {
   background-color: #00a86b;
   color: white;
   border-radius: 6px;
@@ -295,7 +322,7 @@ position: fixed;
   
   .welcome-header, .transactions-header {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: #00A86B;
     color: white;
   }
   
@@ -303,6 +330,7 @@ position: fixed;
     padding: 2px 16px;
 }
 
+<<<<<<< HEAD
 @media screen and (max-width: 768px) {
   
   #myBtn {
@@ -312,6 +340,20 @@ position: fixed;
   
 }
   
+=======
+#myBtn {
+  background-color: #00a86b;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  height: 32px;
+  width: 40%;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+>>>>>>> popupStyling
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 /* @media screen and (max-height: 450px) {
