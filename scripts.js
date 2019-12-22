@@ -61,19 +61,18 @@ form.addEventListener('submit', e => {
         totalSpent +=  price;   // update total budget
         moneyLeft();            // update progress bar
         decreaseTotal();        // decreases transactions from total on top center of page
+        overBudget();           // display cow if at or over total budget
 
         const selectedCategory = document.querySelector('#categoryDropdown');
         const categoryName = selectedCategory.options[selectedCategory.selectedIndex].text;
         
         const latestTransaction = new ItemPurchase(price, categoryName);
         transactionHistory.unshift(latestTransaction);      // add latest transaction to the start of array
-        console.log(transactionHistory);
 
         // find correct array index for categoryBudget/categorySpent based on dropdown box
         const selectedIndex = selectedCategory.selectedIndex;
         updateCategory(selectedIndex, latestTransaction.price);
     }
-    overBudget();
 });
 
 /* updates the amount spent in the proper category, then displays it on the page */
@@ -110,12 +109,12 @@ function moneyLeft() {
     }
 } 
 
-//plays cow sounds and displays cash cow telling you that you are spending to much
-let moo = new Audio("./sounds/Cow.mp3")
-let heard = new Audio("./sounds/SmallHerd.mp3")
-
 /* Alerts the user if their spending reaches or exceeds the total budget */
 function overBudget(){
+    //plays cow sounds and displays cash cow telling you that you are spending to much
+    const moo = new Audio("./sounds/Cow.mp3")
+    const heard = new Audio("./sounds/SmallHerd.mp3")
+
     if (totalSpent == totalBudget){
         document.getElementById("cashCow").style.display = "contents";
         moo.play();
@@ -151,12 +150,6 @@ span.onclick = function() {
   modal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
 ////////////////////////////////////////////////////////
 // Get the modal
 let purchaseModal = document.getElementById("transactionList");
@@ -174,9 +167,10 @@ spanPan.onclick = function() {
   purchaseModal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
+// When the user clicks anywhere outside of either modal, close it
 window.onclick = function(event) {
-  if (event.target == purchaseModal) {
-    purchaseModal.style.display = "none";
+    if (event.target == modal || event.target == purchaseModal) {
+      modal.style.display = "none";
+      purchaseModal.style.display = "none";
+    }
   }
-}

@@ -94,16 +94,21 @@
     </div>
   
   </div>
-  <button id="myBtn">Recent Transactions</button>
+
+  <div class="recent">
+    <button id="myBtn">Recent Transactions</button>
+  </div>
 
   <div id="transactionList" class="transactions">
 
     <div class="transaction-content">
       <div class="transactions-header">
         <span class="close">&times;</span>
-        <h1>Your Recent Transactions</h1>
+        <h2>Your Recent Transactions</h2>
       </div>
       <div id="displayTransactions">
+          <div id="transaction-category" class="column1"></div>
+          <div id="transaction-price" class="column2"></div>
       </div>
     </div>
 <script src="scripts.js"></script>
