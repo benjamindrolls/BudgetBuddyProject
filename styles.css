@@ -1,41 +1,90 @@
 p {
-  
-  font-size: 12px;
+  font-size: 16px;
   padding-left: 10px;
   padding-right: 10px;
   font-family: 'Nunito', sans-serif;
-
 }
+
+.appPurpose{
+text-align: center;
+}
+.remainingBudget{
+  font-size: 18px;
+  margin: 5px;
+}
+
 h2{
   margin: auto;
-  padding-left: 10px;
+  padding-left: 0px;
   padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: left;
   font-family: 'Nunito', sans-serif;
 }
+.welcome-copy{
+  font-size: 14px;
+}
+.gettingStartedContainer{
+  text-align: center;
+  padding-bottom: 15px;
+ }
+.gettingStartedGraphic{
+  box-shadow: 5px 5px lightgrey;
+
+}
+
+
 #myProgress {
     width: 75%;
-    background-color: grey;
+    background-color: lightgray;
     align-items: center;
     margin: auto;
+    border-radius: 4px;
   }
-  
+
 #myBar {
+  transition: width 1s;
   width: 1%;
   height: 20px;
-  background-color: green; 
+  background-image: linear-gradient(-90deg, red, orange, yellow);
+  border-radius: 4px;
 }
+
+
+#moneySpent{
+  width: 42%;
+  height: 25px;
+  text-align: center;
+  border: 2px solid lightgrey;
+  border-radius: 4px;
+  font-size: 16px;
+  margin: 10px;
+}
+  
 
 .container {
     display: flex;
-    margin-top: 60px;
+    margin-top: 35px;
+    padding: 10px;
 }
-.column1 {
+#displayTransactions {
+    display: flex;
+}
+.column1, #transaction-category {
     flex: 1;
 }
-/* .column2 {
 
+#categoryDropdown{
+  width: 42%;
+  height: 32px;
+  margin-left: 8px;
+  margin-right: 10px;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 16px;
+}
 
-} */
 
 #budgetContainer{
     width: 100%;
@@ -47,7 +96,9 @@ h2{
 }
 
 #budgetDisplay {
-    font-size: 200%;
+    font-size: 300%;
+    display: flex;
+    justify-content: center;
 }
 
 body { 
@@ -56,130 +107,134 @@ body {
     height: 100vh;
   }
   
-  .header {
-    overflow: hidden;
-    background-color: #00A86B;
-    padding-top: 4px;
-    padding-right: 10px;
-    padding-bottom: 4px;
-    padding-left: 12px;
-    height: 40px;
-    text-decoration: none;
-    font-size: 10px; 
-    line-height: 50px;
-  }
+.header {
+  overflow: hidden;
+  background-color: #00A86B;
+  padding-top: 4px;
+  padding-right: 10px;
+  padding-bottom: 4px;
+  padding-left: 12px;
+  height: 50px;
+  text-decoration: none;
+  font-size: 10px; 
+  line-height: 50px;
+}
+
+.header a {
+  float: left;
+  color: white;
+  text-align: center;
+  /* float: none; */
+  display: block;
+  /* text-align: left; */
+}
+
+.header a:hover {
+  /* background-color: #ddd; */
+  color: black;
+}
+
+.links {
+  float: right;
+  /* float: none; */
+}
+
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  background-color: #eeeeee; /* Color*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  font-size: 36px;
+  margin-left: 85px;
+}
   
-  .header a {
-    float: left;
-    color: white;
-    text-align: center;
-  }
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-right .5s;
+  margin: auto;
+  font-family: 'Nunito', sans-serif;
+
+}
+.inputContainer{
+  align-items: center;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
   
-  .header a:hover {
-    /* background-color: #ddd; */
-    color: black;
-  }
-  
-  /* .header a.active {
-    /* background-color: dodgerblue;
-    color: white; 
-  } */
-  
-  .links {
-    float: right;
-  }
- 
-  .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    right: 0;
-    background-color: #eeeeee; /* Color*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-  }
-  
-  /* The navigation menu links */
-  .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  /* When you mouse over the navigation links, change their color */
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  
-  /* Position and style the close button (top right corner) */
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    left: 5px;
-    font-size: 36px;
-    margin-left: 85px;
-  }
-  
-  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-  #main {
-    transition: margin-right .5s;
-    margin: auto;
-    font-family: 'Nunito', sans-serif;
-  
-  }
-  .inputContainer{
-    align-items: center;
-    display: flex;
-    margin: auto;
-    flex-direction: column;
-    
-  }
-  .userBudget {
-    border: 1px solid lightslategray;
-    width: 90%;
-    text-align: center;
-    margin-bottom: 15px;
+}
+.userBudget {
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  width: 90%;
+  height: 25px;
+  text-align: center;
+  margin-bottom: 14px;
+  font-size: 14px;
+
 }
 input.submit{
   width: 90%;
 }
-
 select {
     width: 44%;
-    padding: 5px 34px;
     border: none;
     color: black;
     background-color: #eeeeee;
     text-align: center; 
 }
-
 .form{
-    padding-top: 40px;
-    margin-bottom: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.submit{
-    background-color: #00a86b;
-    color: white;
-    border-radius: 6px;
-    border: none;
+  padding-top: 30px;
+  margin-bottom: 30px;
+  height: 82px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
 }
-.alert{
+.submit, #myBtn {
+  background-color: #00a86b;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  height: 32px;
+  width: 92%;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.alert {
 
 position: fixed;
     bottom: 0;
     right: 0;
-
 }
 #alertCow{
   display: none;
@@ -188,18 +243,116 @@ position: fixed;
   display:none;
 }
 
-  @media screen and (max-width: 200px) {
-    .header a {
-      float: none;
-      display: block;
-      text-align: left;
-    }
-    
-    .links {
-      float: none;
-    }
-} /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+
+.welcome-message, .transactions {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  
+  
+  .welcome-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+
+  .transaction-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatebottom;
+    animation-duration: 0.4s
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+
+  @-webkit-keyframes animatebottom {
+    from {bottom:-300px; opacity:0} 
+    to {bottom:0; opacity:1}
+  }
+  
+  @keyframes animatebottom {
+    from {bottom:-300px; opacity:0}
+    to {bottom:0; opacity:1}
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .welcome-header, .transactions-header {
+    padding: 2px 16px;
+    background-color: #00A86B;
+    color: white;
+  }
+  
+  .message-body, .displayTransactions {
+    padding: 2px 16px;
+}
+
+.recent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#myBtn {
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  
+  #myBtn {
+    width: 42%;
+  }
+
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 /* @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;} */
-

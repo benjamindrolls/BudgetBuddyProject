@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <title>Budget Buddy</title>
 </head>
-<body>
+<body onload="getModal()">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div><label for="budgetEntry" id=budgetEntry></label>
@@ -17,36 +17,38 @@
                          <form class="inputContainer" onclick="return false">
                              <h2>Let's start saving.</h2>
                              <p>Please enter how much money you have to spend for the week.</p>
-                            <input type="text" placeholder="Budget Amount" class= "userBudget" name="budget" id="userBudget">
-                        
-                        
-                          <input type="submit" class ="submit" onclick="weeklyBudget();"><br/>
+                            <input type="number" placeholder="Budget Amount" class= "userBudget" name="budget" id="userBudget">
+
+                          <input type="submit" class ="submit" onclick="weeklyBudget();closeNav()"><br/>
                         </form>
         </div>
     </div>
     <div id="main">
     <header class="header">
-        <a href="#" class="logo"><img src="./images/moola-logo 9.40.34 PM.png" alt="Moola Logo" style="width:80px;height:40px;"></a>
+        <a href="#" class="logo"><img src="./images/moola-logo 9.40.34 PM.png" alt="Moola Logo" style="width:100px;height:50px;"></a>
         <div class="links">
             <!-- <span onclick="openNav()" class="categoryIcon"><img src="/BudgetBuddyProject/images/category-icon.png" alt="Category Icon" style="width:20px;height:20px;"></span> -->
-            <span onclick="openNav()" class="budgetIcon"><img src="./images/plus-sign.png" alt="Money Icon" style="width:20px;height:20px;"></a>
+            <span onclick="openNav()" class="budgetIcon"><img src="./images/plus-sign.png" alt="Money Icon" style="width:35px;height:35px;margin-top: 7px;"></a>
 
         </div>
-        
-        
     </header>
+    <div class="appPurchase">
+
+    </div>
     <div id="budgetContainer">  
          <p><span id='budgetDisplay'>$</span></p>  
     </div>   
+    <div class="appPurpose">
+            <p class = "remainingBudget">remaining budget</p>
+        </div>
     <div id="myProgress">
         <div id="myBar"></div>
     </div>
     <form class="form">
         <label for="moneySpent" id="title"></label>
-        <input type="text" class="moneySpent" id="moneySpent" step=".01" placeholder="Transaction"/>
+        <input type="text" onclick="enterBudget()" class="moneySpent" id="moneySpent" step=".01" placeholder="Transaction"/>
         <!-- <label for="password">Password</p></label>
             <input type="text" id="password" class="password" placeholder="Enter your password here"/></input> -->
-            
             <select id = "categoryDropdown">
                 <option value = "1">Entertainment</option>
                 <option value = "2">Food</option>
@@ -54,7 +56,6 @@
                 <option value = "4">Bills</option>
             </select>
             <button class="submit">Submit</button>
-      
     </form>       
     <div class="container">
         <div class="column1">
@@ -68,19 +69,48 @@
                 <div class="dollarsLeft" id="dollarsCategory2">$0.00 / $0.00</div>
                 <div class="dollarsLeft" id="dollarsCategory3">$0.00 / $0.00</div>
                 <div class="dollarsLeft" id="dollarsCategory4">$0.00 / $0.00</div>
-
-                
         </div>
-        
     </div>
     <div class="alert">
-            <span id="alertCow"><img  src="./images/Moola Cow.png" alt="Alert Cow" style="width:300px;height:300px;">
+            <span id="alertCow"><img  src="./images/Moola Cow.png" alt="Alert Cow" style="width:275px;height:150px;">
             </span>
-            <span id="cashCow"><img  src="./images/CashCowAlert.png" alt="Cash Cow Alert" style="width:300px;height:300px;">
+            <span id="cashCow"><img  src="./images/CashCowAlert.png" alt="Cash Cow Alert" style="width:275px;height:150px;">
             </span>
             </div>
+    
+    <div class="recent">
+        <button id="myBtn">Recent Transactions</button>
+    </div>
 </div>
+<div id="welcome" class="welcome-message">
+
+    <div class="welcome-content">
+      <div class="welcome-header">
+        <span class="close">&times;</span>
+        <h2>Welcome to savings</h2>      
+    </div>
+      <div class="message-body">
+       
+        <p class="welcome-copy">We're here to help you understand how to categorize and track your moola on a weekly basis.</p>
+        <p class="welcome-copy"> Start now by entering your weekly budget by clicking on the "+" in the upper right-hand corner!</p>
+       <div class="gettingStartedContainer"> <img src="./images/gettingStarted.png" class="gettingStartedGraphic"  alt="gettingStarted" style="width: 200px; height: 200px;"></div>
+      </div>
+    </div>
+  
+  </div>
+
+  <div id="transactionList" class="transactions">
+
+    <div class="transaction-content">
+      <div class="transactions-header">
+        <span class="close">&times;</span>
+        <h2>Your Recent Transactions</h2>
+      </div>
+      <div id="displayTransactions">
+          <div id="transaction-category" class="column1"></div>
+          <div id="transaction-price" class="column2"></div>
+      </div>
+    </div>
 <script src="scripts.js"></script>
 </body>
 </html>
-
