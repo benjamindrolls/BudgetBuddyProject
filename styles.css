@@ -1,3 +1,5 @@
+
+
 p {
   font-size: 16px;
   padding-left: 10px;
@@ -181,8 +183,7 @@ body {
   font-size: 36px;
   margin-left: 85px;
 }
-  
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+ /*Container div for everything that shifts to the left when the sidebar opens*/ 
 #main {
   transition: margin-right .5s;
   margin: auto;
@@ -235,7 +236,7 @@ select {
   margin-top: 10px;
   font-size: 16px;
 }
-
+/*Alert Cow Styling for budget spent & over budget alerts*/
 .alert {
 
 position: fixed;
@@ -248,8 +249,12 @@ position: fixed;
 #cashCow{
   display:none;
 }
+img.biggerCow{
+  width: 300px;
+  height: 150px; 
+}
 
-
+/*Popup Modal Styling for Welcome Message & Recent Transactions*/
 
 .welcome-message, .transactions {
     display: none; 
@@ -294,7 +299,7 @@ position: fixed;
     animation-duration: 0.4s
   }
   
-  /* Add Animation */
+  /* Modal Animations */
   @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 
     to {top:0; opacity:1}
@@ -315,7 +320,7 @@ position: fixed;
     to {bottom:0; opacity:1}
   }
   
-  /* The Close Button */
+  /* Modal Close Button */
   .close {
     color: white;
     float: right;
@@ -349,8 +354,44 @@ position: fixed;
 #myBtn {
   margin-top: 20px;
 }
+/*For screens 450px wide and wider*/
+@media screen and (min-width: 450px){
+  .alert{
+  position: fixed;
+  bottom: 0;
+  right: 0;}
+  
+  img.biggerCow{
+    width: 400px;
+    height: 200px; 
+  }
 
+
+#alertCow{
+ 
+  display:none;
+}
+#cashCow{
+
+  display:none;
+}
+}
+/*For screens with a height of 640px and shorter*/
+@media screen and (max-height: 640px){
+  img.biggerCow{
+    width: 275px;
+    height: 135px; 
+  }
+
+}
+@media screen and (max-height: 570px){
+  img.biggerCow{
+    width: 158px;
+    height: 78px; 
+  }
+
+}
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-/* @media screen and (max-height: 450px) {
+/* {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;} */
