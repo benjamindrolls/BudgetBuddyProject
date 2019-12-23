@@ -21,6 +21,7 @@ text-align: center;
 .remainingBudget{
   font-size: 18px;
   margin: 5px;
+  margin-top: 10px;
 }
 
 h2{
@@ -44,7 +45,7 @@ h2{
 
 }
 
-
+/*Progress Bar Styling*/
 #myProgress {
     width: 75%;
     background-color: lightgray;
@@ -59,7 +60,7 @@ h2{
   border-radius: 4px;
 }
 
-
+/*Transaction Input Box*/
 #moneySpent{
   width: 42%;
   height: 25px;
@@ -70,7 +71,7 @@ h2{
   margin: 10px;
 }
   
-
+/*Container for Category Column and Money Spent Column*/
 .container {
     display: flex;
     margin-top: 35px;
@@ -82,7 +83,7 @@ h2{
 .column1, #transaction-category {
     flex: 1;
 }
-
+/*Category Selector Dropdown Menu*/
 #categoryDropdown{
   width: 42%;
   height: 32px;
@@ -362,11 +363,19 @@ img.biggerCow{
   right: 0;}
   
   img.biggerCow{
-    width: 400px;
-    height: 200px; 
+    width: 388px;
+    height: 189px; 
   }
-
-
+  .submit, #myBtn {
+    background-color: #00a86b;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    height: 32px;
+    width: 36%;
+    margin-top: 10px;
+    font-size: 16px;
+  }
 #alertCow{
  
   display:none;
@@ -374,6 +383,32 @@ img.biggerCow{
 #cashCow{
 
   display:none;
+}
+.container {
+  display: flex;
+    margin-top: 35px;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 10px;
+    font-size: 20px
+}
+#moneySpent{
+  width: 30%;
+  height: 25px;
+  text-align: center;
+  border: 2px solid lightgrey;
+  border-radius: 4px;
+  font-size: 16px;
+  margin: 10px;
+}
+#categoryDropdown{
+  width: 30%;
+  height: 32px;
+  margin-left: 8px;
+  margin-right: 10px;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 16px;
 }
 }
 /*For screens with a height of 640px and shorter*/
