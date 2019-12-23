@@ -56,7 +56,7 @@ function weeklyBudget() {
 /* Updates the total amount available to spend on the webpage */
 function decreaseTotal() {
    const newtotal = totalBudget - totalSpent;
-   document.getElementById('budgetDisplay').innerHTML = `$${newtotal}`;
+   document.getElementById('budgetDisplay').innerHTML = `$${newtotal.toFixed(2)}`;
 } 
 
 /* this is the "Enter a transaction" form. form starts on line 47 in html*/
@@ -139,19 +139,6 @@ function updateHistory() {
     priceHTML.innerText = `$${transactionHistory[0].price.toFixed(2)}`;     // newest transaction is always element 0
     column = document.querySelector('#transaction-price');
     column.insertBefore(priceHTML, column.firstChild);          // insert at the top of box
-}
-
-/* Updates the content of the "Your Recent Transactions" modal box */
-function updateHistory() {
-    const categoryHTML = document.createElement('p');
-    categoryHTML.innerText = transactionHistory[0].category;
-    let column = document.querySelector('#transaction-category');
-    column.insertBefore(categoryHTML, column.firstChild);
-
-    const priceHTML = document.createElement('p');
-    priceHTML.innerText = `$${transactionHistory[0].price.toFixed(2)}`;
-    column = document.querySelector('#transaction-price');
-    column.insertBefore(priceHTML, column.firstChild);
 }
 
 /* Calculates what percentage of total budget has been spent and updates the progress bar */
