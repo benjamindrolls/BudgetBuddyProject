@@ -48,12 +48,14 @@ h2{
 /*Progress Bar Styling*/
 #myProgress {
     width: 75%;
-    background-color: lightgrey;
+    background-color: lightgray;
     align-items: center;
     margin: auto;
     border-radius: 4px;
   }
+
 #myBar {
+  transition: width 1s;
   width: 1%;
   height: 20px;
   background-image: linear-gradient(-90deg, red, orange, yellow);
@@ -92,6 +94,7 @@ h2{
   margin-top: 10px;
   text-align: center;
   font-size: 16px;
+  padding: 5px;
 }
 
 
@@ -239,14 +242,17 @@ select {
 }
 /*Alert Cow Styling for budget spent & over budget alerts*/
 .alert {
-
-position: fixed;
-    bottom: 0;
-    right: 0;
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
+
 #alertCow{
   display: none;
+  width: 220px;
+  height: 200px;
 }
+
 #cashCow{
   display:none;
 }

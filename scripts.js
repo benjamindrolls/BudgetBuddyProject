@@ -9,11 +9,16 @@ class ItemPurchase {
     }
 }
 
+/* creates a variable with empty array to display history of transactions 
+to be added by user later */
 let transactionHistory = [];
 
+/* starts remaining total at zero, and then increases as total budget is entered */
 let totalBudget = 0;
 let totalSpent = 0;
 
+/* starts category totals at zero in array, which increases as total budget
+and transactions are entered */
 let categoryBudget = [0, 0, 0, 0];
 let categorySpent = [0, 0, 0, 0];
 
@@ -23,53 +28,64 @@ function openNav() {
     document.getElementById("main").style.marginRight = "150px";
 }
 
-/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+/* Set the width of the side navigation to 0 and the left margin of the 
+page content to 0 */
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginRight = "0";
 }
 
-/* Sets the weekly budget to the number that the user enters, then sets category budgets based on that */
+/* Sets the weekly budget to the number that the user enters, then sets 
+/* category budgets based on that */
 function weeklyBudget() {
+    // value is determined by number entered in input box
     totalBudget = document.getElementById("userBudget").value;
     document.getElementById('budgetDisplay').innerHTML = `$${totalBudget}`;
+    /* creates array that prints suggested percents for each category */
     categoryBudget = [0.1 * totalBudget,    // Entertainment
-        0.3 * totalBudget,                  // Food
-        0.1 * totalBudget,                  // Clothing
-        0.5 * totalBudget];                 // Bills
+                      0.3 * totalBudget,    // Food
+                      0.1 * totalBudget,    // Clothing
+                      0.5 * totalBudget];   // Bills
     for (let i = 0; i < categoryBudget.length; i++) {
-        updateCategory(i);                  // update each category line on the page
+        updateCategory(i);                  /* updates each category line on the page */
     }
-    document.getElementById("moneySpent").disabled = false;
+    document.getElementById("moneySpent").disabled = false; /* enables transactions
+    to be entered in input */
 }
 
 /* Updates the total amount available to spend on the webpage */
 function decreaseTotal() {
-   const newtotal =  totalBudget - totalSpent;
+   const newtotal = totalBudget - totalSpent;
    document.getElementById('budgetDisplay').innerHTML = `$${newtotal}`;
 } 
 
-const form = document.querySelector('.form');   // this is the "Enter a transaction" form
+/* this is the "Enter a transaction" form. form starts on line 47 in html*/
+const form = document.querySelector('.form');   
 
 /* When the user clicks Submit, process the transaction */
 form.addEventListener('submit', e => {
     e.preventDefault();
 
+    /* is the "Number" class predetermined in JS to only receive numbers,
+    similar to the number input in html? */
     const price = Number(document.querySelector('#moneySpent').value);
 
     if (price > 0) {
-        totalSpent +=  price;   // update total budget
-        updateProgressBar();    // update progress bar
+        totalSpent +=  price;   // updates total budget
+        updateProgressBar();    // updates progress bar
         decreaseTotal();        // decreases transactions from total on top center of page
-        overBudget();           // display cow if at or over total budget
+        overBudget();           // displays cow if at or over total budget
 
+        /* Receives selected category and declares new variable */
         const selectedCategory = document.querySelector('#categoryDropdown');
         const categoryName = selectedCategory.options[selectedCategory.selectedIndex].text;
         
+        /* declares a new variable and adds transaction history array to list
+        based on the itempurchase constructor */
         const latestTransaction = new ItemPurchase(price, categoryName);
         transactionHistory.unshift(latestTransaction);      // add latest transaction to the start of array
 
-        // find correct array index for categoryBudget/categorySpent based on dropdown box
+        // finds correct array index for categoryBudget/categorySpent based on dropdown box
         const selectedIndex = selectedCategory.selectedIndex;
         updateCategory(selectedIndex, latestTransaction.price);
 
@@ -81,7 +97,7 @@ form.addEventListener('submit', e => {
 function updateCategory(category, price = 0) {
     categorySpent[category] += price;
 
-    let priceDisplay;       // priceDisplay is which line of category spending to update in the HTML
+    let priceDisplay;  // priceDisplay is which line of category spending to update in the HTML
 
     switch (category) {
         case 0:
@@ -123,6 +139,19 @@ function updateHistory() {
     column.insertBefore(priceHTML, column.firstChild);          // insert at the top of box
 }
 
+/* Updates the content of the "Your Recent Transactions" modal box */
+function updateHistory() {
+    const categoryHTML = document.createElement('p');
+    categoryHTML.innerText = transactionHistory[0].category;
+    let column = document.querySelector('#transaction-category');
+    column.insertBefore(categoryHTML, column.firstChild);
+
+    const priceHTML = document.createElement('p');
+    priceHTML.innerText = `$${transactionHistory[0].price.toFixed(2)}`;
+    column = document.querySelector('#transaction-price');
+    column.insertBefore(priceHTML, column.firstChild);
+}
+
 /* Calculates what percentage of total budget has been spent and updates the progress bar */
 function updateProgressBar() {
     const remainingPercent = totalSpent / totalBudget * 100;
@@ -150,6 +179,7 @@ function overBudget(){
         document.getElementById("cashCow").style.display = "none";
     }
 }
+
 //disables transaction text box so the user has to enter weekly income first
 function enterBudget() {
     if (totalBudget > 0) {
@@ -181,6 +211,7 @@ span.onclick = function() {
 let purchaseModal = document.getElementById("transactionList");
 
 let btn = document.getElementById("myBtn");
+
 // Get the <span> element that closes the modal
 let spanPan = document.getElementsByClassName("close")[1];
 
