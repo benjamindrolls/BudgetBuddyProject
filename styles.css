@@ -5,6 +5,14 @@ p {
   font-family: 'Nunito', sans-serif;
 }
 
+.near-category-budget {
+    color: orange;
+}
+.over-category-budget {
+    color: red;
+    font-weight: bold;
+}
+
 .appPurpose{
 text-align: center;
 }

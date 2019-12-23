@@ -100,19 +100,27 @@ function updateCategory(category, price = 0) {
 
     // update the HTML line, using toFixed(2) to put it in money format
     priceDisplay.innerHTML = `$${categorySpent[category].toFixed(2)} / $${categoryBudget[category].toFixed(2)}`;
+
+    if (categorySpent[category] > categoryBudget[category]) {
+        priceDisplay.classList.add('over-category-budget');
+    } else if (categorySpent[category] >= 0.75 * categoryBudget[category]) {
+        priceDisplay.classList.add('near-category-budget');
+    }
 }
 
 /* Updates the content of the "Your Recent Transactions" modal box */
 function updateHistory() {
+    // category in first column
     const categoryHTML = document.createElement('p');
-    categoryHTML.innerText = transactionHistory[0].category;
+    categoryHTML.innerText = transactionHistory[0].category;    // newest transaction is always element 0
     let column = document.querySelector('#transaction-category');
-    column.insertBefore(categoryHTML, column.firstChild);
+    column.insertBefore(categoryHTML, column.firstChild);       // insert at the top of box
 
+    // price in second column
     const priceHTML = document.createElement('p');
-    priceHTML.innerText = `$${transactionHistory[0].price.toFixed(2)}`;
+    priceHTML.innerText = `$${transactionHistory[0].price.toFixed(2)}`;     // newest transaction is always element 0
     column = document.querySelector('#transaction-price');
-    column.insertBefore(priceHTML, column.firstChild);
+    column.insertBefore(priceHTML, column.firstChild);          // insert at the top of box
 }
 
 /* Calculates what percentage of total budget has been spent and updates the progress bar */
