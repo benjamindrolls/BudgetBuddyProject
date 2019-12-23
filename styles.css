@@ -83,6 +83,7 @@ h2{
   margin-top: 10px;
   text-align: center;
   font-size: 16px;
+  padding: 5px;
 }
 
 
@@ -347,10 +348,27 @@ select {
   margin-top: 20px;
 }
 
+
+
 @media screen and (min-width: 768px) {
   
-  #myBtn {
+  .submit {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     width: 42%;
+  }
+
+  #moneySpent {
+    width: 20%;
+  }
+
+  #categoryDropdown {
+    width: 20%;
+  }
+
+  #myProgress {
+    margin-top: 5px;
   }
 
 }
