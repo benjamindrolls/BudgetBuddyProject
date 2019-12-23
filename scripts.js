@@ -91,6 +91,8 @@ form.addEventListener('submit', e => {
 
         updateHistory();        // update transaction history box
     }
+
+    form.reset();               // clears textbox
 });
 
 /* updates the amount spent in the proper category, then displays it on the page */
