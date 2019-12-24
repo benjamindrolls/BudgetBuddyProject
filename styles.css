@@ -85,6 +85,9 @@ h2{
 .column1, #transaction-category {
     flex: 1;
 }
+.column2 {
+  min-width: 100px;
+}
 /*Category Selector Dropdown Menu*/
 #categoryDropdown{
   width: 42%;
@@ -363,6 +366,9 @@ img.biggerCow{
 }
 /*For screens 450px wide and wider*/
 @media screen and (min-width: 450px){
+  .column2 {
+    min-width: 125px;
+  }
   .alert{
   position: fixed;
   bottom: 0;
