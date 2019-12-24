@@ -26,6 +26,7 @@ let categorySpent = [0, 0, 0, 0];
 function openNav() {
     document.getElementById("mySidenav").style.width = "150px";
     document.getElementById("main").style.marginRight = "150px";
+    document.getElementById("contain").style.marginTop = "55px";
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the 
@@ -33,6 +34,7 @@ page content to 0 */
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginRight = "0";
+    document.getElementById("contain").style.marginTop = "35px";
 }
 
 /* Sets the weekly budget to the number that the user enters, then sets 
