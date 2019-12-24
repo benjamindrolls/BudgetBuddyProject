@@ -39,8 +39,8 @@ function closeNav() {
 /* category budgets based on that */
 function weeklyBudget() {
     // value is determined by number entered in input box
-    totalBudget = document.getElementById("userBudget").value;
-    document.getElementById('budgetDisplay').innerHTML = `$${totalBudget}`;
+    totalBudget = Number(document.getElementById("userBudget").value);
+    document.getElementById('budgetDisplay').innerHTML = `$${totalBudget.toFixed(2)}`;
     /* creates array that prints suggested percents for each category */
     categoryBudget = [0.1 * totalBudget,    // Entertainment
                       0.3 * totalBudget,    // Food
@@ -123,6 +123,9 @@ function updateCategory(category, price = 0) {
         priceDisplay.classList.add('over-category-budget');
     } else if (categorySpent[category] >= 0.75 * categoryBudget[category]) {
         priceDisplay.classList.add('near-category-budget');
+    } else {
+        priceDisplay.classList.remove('over-category-budget');
+        priceDisplay.classList.remove('near-category-budget');
     }
 }
 
